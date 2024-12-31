@@ -1,0 +1,8 @@
+nav {
+    border-bottom: 2px solid #862510; /* Línea decorativa */
+  }
+  
+  a {
+    transition: color 0.3s ease;
+  }
+  
