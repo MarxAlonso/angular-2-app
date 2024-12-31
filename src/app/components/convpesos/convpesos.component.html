@@ -1,0 +1,38 @@
+<div class="converter-container">
+  <h1>Convertidor de Peso</h1>
+  <div class="form-group">
+    <label for="weight">Peso:</label>
+    <input
+      id="weight"
+      type="number"
+      [(ngModel)]="inputWeight"
+      placeholder="Ingresa el peso"
+    />
+  </div>
+  <div class="form-group">
+    <label for="fromUnit">Convertir desde:</label>
+    <select id="fromUnit" [(ngModel)]="fromUnit">
+      <option value="kg">Kilogramos</option>
+      <option value="lbs">Libras</option>
+      <option value="g">Gramos</option>
+      <option value="oz">Onzas</option>
+      <option value="mg">Miligramos</option>
+      <option value="ton">Toneladas</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="toUnit">Convertir a:</label>
+    <select id="toUnit" [(ngModel)]="toUnit">
+      <option value="kg">Kilogramos</option>
+      <option value="lbs">Libras</option>
+      <option value="g">Gramos</option>
+      <option value="oz">Onzas</option>
+      <option value="mg">Miligramos</option>
+      <option value="ton">Toneladas</option>
+    </select>
+  </div>
+  <button (click)="convertWeight()">Convertir</button>
+  <div class="result" *ngIf="convertedWeight !== null">
+    <p>Resultado: {{ convertedWeight | number : "1.2-2" }} {{ toUnit }}</p>
+  </div>
+</div>
